@@ -1,0 +1,35 @@
+{
+  "name": "modcolle-web",
+  "version": "1.0.0",
+  "description": "Modcolle's view layer",
+  "main": "public/index.html",
+  "scripts": {
+    "build": "gulp",
+    "prestart": "npm run build",
+    "start": "http-server",
+    "dev": "npm run build && gulp browser-sync"
+  },
+  "author": "Apipol Niyomsak <makemek101@hotmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "fallbackjs": "1.1.8",
+    "font-awesome": "4.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "7.1.1",
+    "babel": "6.23.0",
+    "babel-preset-env": "1.5.2",
+    "browser-sync": "2.18.12",
+    "browserify": "14.4.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "6.1.2",
+    "gulp-clean-css": "3.4.2",
+    "gulp-postcss": "7.0.0",
+    "gulp-rename": "1.2.2",
+    "gulp-uglify": "3.0.0",
+    "gulp-util": "3.0.8",
+    "uglify": "0.1.5",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
+  }
+}
