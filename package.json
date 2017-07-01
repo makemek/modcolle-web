@@ -13,7 +13,9 @@
   },
   "author": "Apipol Niyomsak <makemek101@hotmail.com>",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "unfetch": "3.0.0"
+  },
   "devDependencies": {
     "babel": "6.23.0",
     "babel-core": "6.25.0",

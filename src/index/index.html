@@ -19,28 +19,28 @@
         <label class="tabs" for="account">By DMM Account</label>
 
         <section id="form-session" class="login-form">
-          <form action="/dmm-session" method="POST">
+          <form action="#" onsubmit="return loginByDmmSession()">
             <label>
               <span>Session ID</span>
-              <input type="text" name="dmm_session" placeholder="Value of cookie INT_SESID" required autofocus>
+              <input id="dmm-session" type="text" name="dmm_session" placeholder="Value of cookie INT_SESID" required autofocus>
             </label>
 
-            <button type="submit" name="submit"><i class="fa fa-sign-in fa-lg"></i> Login</button>
+            <button id="dmm-session-submit-bt" type="submit" name="submit"><i class="fa fa-sign-in fa-lg"></i> Login</button>
           </form>
         </section>
 
         <section id="form-account"  class="login-form">
-          <form action="/dmm-account" method="POST">
+          <form action="#" onsubmit="return loginByDmmAccount()">
             <label>
               <span>Email</span>
-              <input type="email" name="username" size="30" required="required">
+              <input id="dmm-email" type="email" name="username" size="30" required="required">
             </label>
             <label>
               <span>Password</span>
-              <input type="password" name="password" size="30" required="required">
+              <input id="dmm-password" type="password" name="password" size="30" required="required">
             </label>
 
-            <button type="submit" name="submit"><i class="fa fa-sign-in fa-lg"></i> Login</button>
+            <button id="dmm-account-submit-bt" type="submit" name="submit"><i class="fa fa-sign-in fa-lg"></i> Login</button>
           </form>
         </section>
 
