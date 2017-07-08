@@ -1,12 +1,24 @@
+# Modcolle Web Server
+A front-end of Modcolle.
+All webpage assets are in here.
+
+Modcolle use [http-server](https://www.npmjs.com/package/http-server) to quickly spin-up a server for serving static files from `/public`.
+All static files are created from Webpack, bundling JS, CSS, and other related assets together
+
+## Installation
+```
+npm install
+```
+
+## Running the App
 ### Development Mode
-With [nodemon](https://npmjs.org/packages/nodemon) and [browser-sync](https://npmjs.org/packages/browser-sync)
-> **In this mode, no environment variables are loaded**.
-You can still set them inside a command line if needed.
+Incrementally rebuild and bundle assets on file within `/src` changes
 ```
 npm run dev
+```
 
------------
-(optional) configure browser-sync using environment variables before running.
-PORT=<port number> # browser-sync app's proxy port; default is 5000
-PORT_DEV=<port number> # browser-sync listeing port; default is 3000
+### Production Mode
+Javascript and CSS are uglified
+```
+npm start
 ```
