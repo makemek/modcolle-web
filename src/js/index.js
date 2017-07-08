@@ -1,4 +1,6 @@
 'use strict'
 
-require('./lib-fallback')
-require('./kc-maintenance')
+import { maintenanceCheck } from './kc-maintenance'
+import './jitter-fix'
+
+window.onload = () => maintenanceCheck()

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <link href="css/style.min.css" rel="stylesheet"/>
     <title>ModColle</title>
   </head>
 
@@ -51,8 +50,8 @@
     <!-- Start  Banner -->
     <header class="banner">
       <div class="cover">
-        <img src="img/cover-bg.jpg" class="background cloud">
-        <img src="img/kaga.png" class="background kaga">
+        <img src="<%= require('./img/cover-bg.jpg') %>" class="background cloud">
+        <img src="<%= require('./img/kaga.png') %>" class="background kaga">
       </div>
       <div class="banner-content-wrapper">
         <div class="banner-content banner-info">
@@ -60,7 +59,7 @@
           <h1>Modcolle</h1>
           <p>Kancolle Proxy Server</p>
           <div class="hr-line"></div>
-          <a href="#login" title="Launch"><img id="launcher" src="img/launcher.png" width="75%" height="75%" alt="Launch"></a>
+          <a href="#login" title="Launch"><img id="launcher" src="<%= require('./img/launcher.png') %>" width="75%" height="75%" alt="Launch"></a>
         </div>
       </div>
       <aside id="maintenance-timer" class="banner-info countdown-timer">
@@ -122,25 +121,5 @@
       <p><i class="fa fa-copyright"></i> Apipol Niyomsak</p>
     </footer>
     <script src="http://203.104.209.7/gadget/js/kcs_const.js"></script>
-    <script src="js/bundle.min.js"></script>
-    <script>
-    // bg jitter fix for ie
-    if(navigator.userAgent.match(/Edge\/12\./)) {
-        $('body').on("mousewheel", function () {
-
-            event.preventDefault();
-            var wd = event.wheelDelta;
-            var csp = window.pageYOffset;
-            window.scrollTo(0, csp - wd);
-        });
-    }
-
-    var modal = document.getElementById('login');
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            window.location = "#close"
-        }
-    }
-    </script>
   </body>
 </html>

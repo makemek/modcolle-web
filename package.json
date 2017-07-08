@@ -4,32 +4,31 @@
   "description": "Modcolle's view layer",
   "main": "public/index.html",
   "scripts": {
-    "build": "gulp",
-    "prestart": "npm run build",
+    "webpack:dev": "webpack --progress",
+    "webpack:prod": "webpack -p --progress",
+    "prestart": "npm run webpack:prod",
     "start": "http-server",
-    "dev": "npm run build && gulp browser-sync"
+    "dev": "webpack --watch --progress"
   },
   "author": "Apipol Niyomsak <makemek101@hotmail.com>",
   "license": "ISC",
-  "dependencies": {
-    "fallbackjs": "1.1.8",
-    "font-awesome": "4.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "7.1.1",
     "babel": "6.23.0",
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
     "babel-preset-env": "1.5.2",
     "browser-sync": "2.18.12",
-    "browserify": "14.4.0",
-    "gulp": "3.9.1",
-    "gulp-babel": "6.1.2",
-    "gulp-clean-css": "3.4.2",
-    "gulp-postcss": "7.0.0",
-    "gulp-rename": "1.2.2",
-    "gulp-uglify": "3.0.0",
-    "gulp-util": "3.0.8",
-    "uglify": "0.1.5",
-    "vinyl-buffer": "1.0.0",
-    "vinyl-source-stream": "1.1.0"
+    "browser-sync-webpack-plugin": "1.1.4",
+    "css-loader": "0.28.4",
+    "extract-text-webpack-plugin": "2.1.2",
+    "favicons-webpack-plugin": "0.0.7",
+    "file-loader": "0.11.2",
+    "font-awesome": "4.7.0",
+    "html-webpack-plugin": "2.29.0",
+    "resource-hints-webpack-plugin": "0.0.1",
+    "style-loader": "0.18.2",
+    "url-loader": "0.5.9",
+    "webpack": "3.0.0"
   }
 }

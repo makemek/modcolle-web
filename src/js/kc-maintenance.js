@@ -16,9 +16,7 @@ const launcher = document.getElementById('launcher')
 const launcherAchor = launcher.parentNode
 const launcherLink = launcherAchor.href
 
-maintenanceCheck()
-
-function maintenanceCheck() {
+export function maintenanceCheck() {
   const now = Date.now()
   const willMaintenacne = now <= MaintenanceInfo.StartDateTime
   const onMaintenance = now > MaintenanceInfo.StartDateTime && now < MaintenanceInfo.EndDateTime
