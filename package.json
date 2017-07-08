@@ -5,7 +5,7 @@
   "main": "public/index.html",
   "scripts": {
     "webpack:dev": "webpack --progress",
-    "webpack:prod": "webpack -p --progress",
+    "webpack:prod": "cross-env NODE_ENV=production webpack -p --progress",
     "prestart": "npm run webpack:prod",
     "start": "http-server",
     "dev": "webpack --watch --progress"
@@ -20,6 +20,7 @@
     "babel-preset-env": "1.5.2",
     "browser-sync": "2.18.12",
     "browser-sync-webpack-plugin": "1.1.4",
+    "cross-env": "5.0.1",
     "css-loader": "0.28.4",
     "extract-text-webpack-plugin": "2.1.2",
     "favicons-webpack-plugin": "0.0.7",

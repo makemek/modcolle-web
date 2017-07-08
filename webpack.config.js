@@ -71,7 +71,7 @@ const devConfig = {
   entry: path.resolve('src', 'index.js'),
   devtool: 'eval-source-map',
   output: {
-    filename: 'bundle.dev.js',
+    filename: 'bundle.js',
     path: path.resolve('public')
   },
   module: {
