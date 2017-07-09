@@ -1,6 +1,7 @@
 'use strict'
 
 import { maintenanceCheck } from './kc-maintenance'
-import './jitter-fix'
+import { initModal } from './modal'
 
+initModal()
 window.onload = () => maintenanceCheck()

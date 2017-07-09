@@ -32,26 +32,26 @@ const fontAwesome = {
   include: path.resolve('node_modules', 'font-awesome'),
   loader: 'file-loader',
   options: {
-    outputPath: './font/',
+    outputPath: '/font/',
     name: '[name].[ext]'
   }
 }
 
 const images = {
   test: /\.(jp(e)?g|png|gif|svg)(\?v=\d+\.\d+\.\d+)?$/,
-  include: path.resolve('src', 'img'),
+  include: path.resolve('src'),
   loader: 'url-loader',
   options: {
     limit: 10000,
     name: '[name].[ext]',
-    outputPath: './img/'
+    outputPath: '/img/'
   }
 }
 
 const plugins = [
   new HtmlWebpackPlugin({
     filename: path.resolve('public', 'index.html'),
-    template: path.resolve('src', 'index.html'),
+    template: path.resolve('src', 'index', 'index.html'),
   }),
   new ResourceHintWebpackPlugin(),
   new FaviconsWebpackPlugin({
@@ -64,14 +64,17 @@ const plugins = [
     port: process.env.PORT_DEV || 3000,
     server: { baseDir: ['public'] }
   }),
-  new ExtractTextPlugin('style.css')
+  'production' === process.env.NODE_ENV ? new ExtractTextPlugin('[name].[contenthash:6].css') : new ExtractTextPlugin('[name].css')
 ]
 
 const devConfig = {
-  entry: path.resolve('src', 'index.js'),
+  entry: {
+    'index/bundle': path.resolve('src', 'index'),
+    'common/bundle': path.resolve('src', 'common')
+  },
   devtool: 'eval-source-map',
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve('public')
   },
   module: {
@@ -91,7 +94,7 @@ function prodConfig() {
   return Object.assign({}, devConfig, {
     devtool: undefined,
     output: Object.assign({}, devConfig.output, {
-      filename: 'bundle.[hash:6].js'
+      filename: '[name].[chunkhash:6].js'
     }),
     module: {
       rules: [babel, css, fontAwesomeProd, imageProd]
