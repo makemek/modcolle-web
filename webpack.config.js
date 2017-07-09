@@ -54,6 +54,12 @@ const plugins = [
     filename: path.resolve('public', 'index.html'),
     template: path.resolve('src', 'index', 'index.html'),
     inlineSource: '.(js)$',
+    chunks: ['common/bundle', 'index/bundle'],
+  }),
+  new HtmlWebpackPlugin({
+    filename: path.resolve('public', 'kancolle.html'),
+    template: path.resolve('src', 'kancolle', 'kancolle.html'),
+    chunks: ['common/bundle'],
   }),
   new HtmlWebpackInlineSourcePlugin(),
   new ResourceHintWebpackPlugin(),
