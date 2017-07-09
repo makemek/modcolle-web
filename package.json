@@ -8,7 +8,8 @@
     "webpack:prod": "cross-env NODE_ENV=production webpack -p --progress",
     "prestart": "npm run webpack:prod",
     "start": "http-server",
-    "dev": "webpack --watch --progress"
+    "dev": "webpack --watch --progress",
+    "lint": "eslint src"
   },
   "author": "Apipol Niyomsak <makemek101@hotmail.com>",
   "license": "ISC",
@@ -24,6 +25,8 @@
     "browser-sync-webpack-plugin": "1.1.4",
     "cross-env": "5.0.1",
     "css-loader": "0.28.4",
+    "eslint": "4.2.0",
+    "eslint-config-modcolle": "0.1.1",
     "extract-text-webpack-plugin": "2.1.2",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "0.11.2",

@@ -1,7 +1,7 @@
 /* Depends on http://203.104.209.7/gadget/js/kcs_const.js */
 /* global MaintenanceInfo */
 
-'use strict'
+
 
 const timer = {
   day: document.getElementById('day'),

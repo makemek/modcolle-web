@@ -1,0 +1,11 @@
+{
+  "env": {
+      "es6": true,
+      "browser": true,
+      "mocha": true
+  },
+  "extends": "modcolle",
+  "parserOptions": {
+      "sourceType": "module"
+  }
+}
