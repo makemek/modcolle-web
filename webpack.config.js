@@ -58,8 +58,8 @@ const plugins = [
   new HtmlWebpackPlugin({
     filename: path.resolve('public', 'kancolle.html'),
     template: path.resolve('src', 'kancolle', 'kancolle.html'),
-    inlineSource: '.(js)$',
-    chunks: ['common/bundle', 'kancolle/bundle'],
+    inlineSource: '.(js|css)$',
+    chunks: ['kancolle/bundle'],
   }),
   new ResourceHintWebpackPlugin(),
   new FaviconsWebpackPlugin({

@@ -1,9 +1,24 @@
+const URL = require('url-parse')
+
 export function main() {
-  startKancolle('/mainD2.swf')
+  const gameUrl = extractGameUrlFromCurrentUrl('kc')
+  cleanUrl()
+
+  if(!gameUrl)
+    return window.location.replace('/')
+
+  startKancolle(gameUrl)
 }
 
-function extractUrl() {
+function extractGameUrlFromCurrentUrl(param) {
+  const {query} = getBrowserUrl()
+  return query[param]
+}
 
+function cleanUrl() {
+  const url = getBrowserUrl()
+  url.set('query', '')
+  window.history.replaceState('kancolle', 'swf', url.toString())
 }
 
 function startKancolle(url) {
@@ -18,5 +33,10 @@ function createFlashElement(source) {
   const flash = document.createElement('object')
   flash.setAttribute('type', 'application/x-shockwave-flash')
   flash.setAttribute('data', source)
+  flash.setAttribute('id', 'kancolle')
   return flash
+}
+
+function getBrowserUrl() {
+  return new URL(window.location.href, true)
 }

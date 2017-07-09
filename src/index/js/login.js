@@ -30,7 +30,7 @@ function login(api, jsonPayload) {
   })
     .then(res => res.json())
     .then(({success, flashUrl}) => {
-      success? redirect(`/kancolle?kc=${flashUrl}`) : redirect('?fail#login')
+      success? redirect(`/kancolle.html?kc=${flashUrl}`) : redirect('?fail#login')
     })
 }
 
