@@ -59,7 +59,7 @@ const plugins = [
     filename: path.resolve('public', 'kancolle.html'),
     template: path.resolve('src', 'kancolle', 'kancolle.html'),
     inlineSource: '.(js)$',
-    chunks: ['common/bundle'],
+    chunks: ['common/bundle', 'kancolle/bundle'],
   }),
   new ResourceHintWebpackPlugin(),
   new FaviconsWebpackPlugin({
@@ -78,7 +78,8 @@ const plugins = [
 const devConfig = {
   entry: {
     'index/bundle': path.resolve('src', 'index'),
-    'common/bundle': path.resolve('src', 'common')
+    'common/bundle': path.resolve('src', 'common'),
+    'kancolle/bundle': path.resolve('src', 'kancolle'),
   },
   devtool: 'eval-source-map',
   output: {
