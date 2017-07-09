@@ -28,10 +28,10 @@ function login(api, jsonPayload) {
     },
     body: encodeJson(jsonPayload)
   })
-  .then(res => res.json())
-  .then(({success, flashUrl}) => {
-    success? redirect(`/kancolle?kc=${flashUrl}`) : redirect('?fail#login')
-  })
+    .then(res => res.json())
+    .then(({success, flashUrl}) => {
+      success? redirect(`/kancolle?kc=${flashUrl}`) : redirect('?fail#login')
+    })
 }
 
 function redirect(url) {
@@ -39,7 +39,7 @@ function redirect(url) {
 }
 
 function encodeJson(json) {
-  let params = []
+  const params = []
   Object.keys(json).map(key => params.push(`${key}=${encodeURIComponent(json[key])}`))
   return params.join('&')
 }
