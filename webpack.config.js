@@ -6,6 +6,7 @@ const ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 
 const babel = {
   test: /\.js$/,
@@ -52,7 +53,9 @@ const plugins = [
   new HtmlWebpackPlugin({
     filename: path.resolve('public', 'index.html'),
     template: path.resolve('src', 'index', 'index.html'),
+    inlineSource: '.(js)$',
   }),
+  new HtmlWebpackInlineSourcePlugin(),
   new ResourceHintWebpackPlugin(),
   new FaviconsWebpackPlugin({
     logo: path.resolve('src', 'favicon.png'),
