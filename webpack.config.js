@@ -52,6 +52,12 @@ const plugins = [
   new HtmlWebpackPlugin({
     filename: path.resolve('public', 'index.html'),
     template: path.resolve('src', 'index', 'index.html'),
+    chunks: ['common/bundle', 'index/bundle'],
+  }),
+  new HtmlWebpackPlugin({
+    filename: path.resolve('public', 'kancolle.html'),
+    template: path.resolve('src', 'kancolle', 'kancolle.html'),
+    chunks: ['common/bundle'],
   }),
   new ResourceHintWebpackPlugin(),
   new FaviconsWebpackPlugin({
